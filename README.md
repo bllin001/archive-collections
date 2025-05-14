@@ -1,5 +1,56 @@
 # Exploring Archive-It Collections: A Case Study of the 2013 Boston Marathon
 
+## How to search in Archive-It?
+
+Archive-It offers a web interface for searching collections, but programmatic access allows for more systematic data collection and analysis. This project implements a Python-based approach for searching Archive-It collections using web scraping techniques.
+
+### Using the Python Library
+
+To search Archive-It programmatically:
+
+1. Use the `search_archive_collections()` function from the utility module:
+
+```python
+from code.id_collections import search_archive_collections
+
+# Basic search example
+result = search_archive_collections("boston marathon")
+
+# Access the results
+collection_count = result["count"]
+collections = result["collections_data"]["collections"]
+
+# Print collection information
+for collection in collections:
+    print(f"Collection: {collection['name']}")
+    print(f"ID: {collection['id']}")
+    print(f"URL: {collection['url']}")
+```
+
+2. Customize search parameters:
+
+```python
+# Advanced search with options
+result = search_archive_collections(
+    query="boston marathon",      # Search term
+    save_to_file=True,            # Save results to JSON
+    output_dir="../output",       # Output directory
+    verbose=True                  # Print progress information
+)
+```
+
+3. Results are saved as JSON files in the specified output directory, with filenames based on the search query (e.g., `boston_marathon_collections.json`).
+
+### What the Search Returns
+
+The search function extracts:
+- Collection IDs
+- Collection names
+- Collection URLs
+
+These results enable further exploration of archived web content related to specific events or topics. For additional metadata like URI counts, collection dates, or collector information, you would need to access the individual collection pages.
+
+
 ## How many collections are available?
 There are three Archive-It collections related to the 2013 Boston Marathon bombing:
 
@@ -11,7 +62,7 @@ There are three Archive-It collections related to the 2013 Boston Marathon bombi
 
 These collections provide different perspectives and information sources about the event, with a total of 9,713 archived URIs.
 
-## Collecting URIs from the Archive-It Collection
+## Collecting URIs from a specific Archive-It Collection
 
 To collect the seed URIs from this collection, I used the [`aiu`](https://github.com/oduwsdl/aiu) Python library, which provides an `ArchiveItCollection` class that interfaces with the Archive-It API. This class allows for the extraction of metadata and URIs using methods such as `list_seed_uris()` or `return_all_metadata_dict()`.
 
