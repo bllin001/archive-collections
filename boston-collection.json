@@ -1,0 +1,32 @@
+{
+    "search_query": "boston marathon",
+    "collections": [
+        {
+            "name": "Blasts in Boston Marathon",
+            "id": 3752,
+            "uri_count": 1,
+            "collected_by": "Virginia Tech: Crisis, Tragedy, and Recovery Network",
+            "archived_since": "Jun, 2013",
+            "description": "News on the Boston marathon bombings",
+            "subject": "Spontaneous Events, Government - Cities, bombing, marathon, Boston, Boston marathon, bombs, Tamerlan Tsarnae"
+        },
+        {
+            "name": "2013 Boston Marathon Bombing",
+            "id": 3649,
+            "uri_count": 318,
+            "collected_by": "Internet Archive Global Events",
+            "archived_since": "Apr, 2013",
+            "description": "This collection is comprised of contributions from curators and subject matter experts; and includes news articles, blogs, social media sites, and organizational websites related to the 2013 Boston Marathon Bombing and its aftereffects",
+            "subject": "Spontaneous Events"
+        },
+        {
+            "name": "Boston Marathon Bombing: Twitter and RSS feeds",
+            "id": 3645,
+            "uri_count": 9394,
+            "collected_by": "Virginia Tech: Crisis, Tragedy, and Recovery Network",
+            "archived_since": "Apr, 2013",
+            "description": "The URLs in this collection were harvested from Twitter feeds, Google news, and Reddit pages and threads using Virginia Tech's newly developed URL harvesting tool",
+            "subject": "Spontaneous Events, Government - Cities"
+        }
+    ]
+}
