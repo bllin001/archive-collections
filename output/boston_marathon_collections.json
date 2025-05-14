@@ -1,0 +1,21 @@
+{
+    "query": "boston marathon",
+    "search_url": "https://archive-it.org/explore?q=boston+marathon&show=Collections",
+    "collections": [
+        {
+            "id": "3752",
+            "name": "Blasts in Boston Marathon",
+            "url": "https://archive-it.org/collections/3752"
+        },
+        {
+            "id": "3649",
+            "name": "2013 Boston Marathon Bombing",
+            "url": "https://archive-it.org/collections/3649"
+        },
+        {
+            "id": "3645",
+            "name": "Boston Marathon Bombing: Twitter and RSS feeds",
+            "url": "https://archive-it.org/collections/3645"
+        }
+    ]
+}
