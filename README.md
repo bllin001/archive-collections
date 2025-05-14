@@ -2,7 +2,25 @@
 
 ## How to search in Archive-It?
 
-Archive-It offers a web interface for searching collections, but programmatic access allows for more systematic data collection and analysis. This project implements a Python-based approach for searching Archive-It collections using web scraping techniques.
+Archive-It provides a web interface for exploring web archive collections, but programmatic access is often more efficient and scalable—especially when working with multiple collections. This project uses a Python-based web scraping approach to automate the retrieval of Archive-It collection data.
+
+When constructing a search URL for Archive-It collections, two parameters are essential:
+1. `q` - This is your search query (e.g., "boston marathon")
+2. `show=Collections` - This parameter ensures the search is performed within collections rather than individual archived pages
+
+The search URL is constructed as follows:
+```python
+query_param = "+".join(query.split(" "))  # Replace spaces with + signs
+search_url = f"https://archive-it.org/explore?q={query_param}&show=Collections"
+```
+
+Let's take the **Boston Marathon** event as an example. Suppose we want to identify and analyze collections related to this event. By using the query `boston marathon`, we can search Archive-It's collection index and extract metadata for each result—including the **collection ID**
+
+These collection IDs are essential because the [`aiu`](https://github.com/oduwsdl/aiu) Python library—used to access collection metadata and seed URIs—requires the collection ID as a parameter. Automating the ID extraction step allows for seamless integration with the `aiu` library and avoids manual copying from the web interface.
+
+As shown in the screenshot below, the query returns **three collections** related to the Boston Marathon. Each includes a name, description, subjects, collecting organization, and a URL containing the collection ID. Rather than extracting these manually, this project parses the HTML and stores the structured results for later use.
+
+![Boston Marathon search results](image/boston-marathon-searching.png)
 
 ### Using the Python Library
 
