@@ -4,7 +4,7 @@ from utils import *
 from aiu import ArchiveItCollection
 
 
-with open("../boston-collection.json", "r") as f:
+with open("../boston-collection-manual.json", "r") as f:
     data = json.load(f)
     
     
@@ -27,7 +27,7 @@ print(f"Is Private: {aic.is_private()}")
 print(f"Subject: {aic.get_subject()}")
 print(f"Does it exist: {aic.does_exist()}")
 
-print(aic.return_all_metadata_dict())
+# print(aic.return_all_metadata_dict())
 # Get seed URIs
 # seed_uris = aic.list_seed_uris()
 # print(f"Number of Seed URIs: {len(seed_uris)}")
